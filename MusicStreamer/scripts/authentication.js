@@ -1,5 +1,6 @@
 import { errorMessage, infoMessage } from './notifications.js';
 
+//Logged in User data
 export function authenticationInfo (userInfo) {
     sessionStorage.setItem('authtoken', userInfo._kmd.authtoken);
     sessionStorage.setItem('name', userInfo.name);
@@ -8,11 +9,14 @@ export function authenticationInfo (userInfo) {
     //sessionStorage.setItem('userId', userInfo._id);
 }
 
+//Set Header information
 export function setHeaderInfo (ctx) {
     ctx.isloggedIn = sessionStorage.getItem('authtoken') !== null;
     ctx.name = sessionStorage.getItem('name');
 }
 
+
+//Registration validation
 export function dataAuthentication (userData, repeatPassword) {
     if(userData.password !== repeatPassword){
         errorMessage('PASSWORDS MUST MATCH!');

@@ -43,3 +43,21 @@ audio {
     padding: 10px;
 }
 
+.lib-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.create-button {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #003E5D;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 12px;
+}
+

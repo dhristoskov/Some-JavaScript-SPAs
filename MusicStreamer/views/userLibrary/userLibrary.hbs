@@ -1,12 +1,14 @@
 {{>header}}
-{{#if isNotEmpty}}
+{{#if isCreated}}
     <div>
-        {{#each songs}}
-            {{> song}}
-        {{/each}}
+       {{>createdLibrary}}
     </div> 
 {{else}}
-<h2>{{name}} Music Library</h2>
-<p>Your Library is still Empty</p>
+<div class="lib-container">
+    <h2>{{name}} Music Library</h2>
+    <h3>Your Library is still Empty</h3>
+    <h3>Create your own library now.</h3>
+    <a href="#/create" class="create-button">Create Library</a>
+</div>
 {{/if}}
 {{>footer}}

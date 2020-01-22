@@ -4,10 +4,11 @@ import { infoMessage } from './notifications.js';
 
 function main () {
 
+    //Load Header and Footer parts
     const partials = {
         header: '/views/common/header.hbs',
         footer: '/views/common/footer.hbs'
-    }
+    };
 
     //Render Home page
     function loadHome (context) {
@@ -15,7 +16,7 @@ function main () {
 
         context.loadPartials(partials)   
                .partial('/views/home/loggedInHome.hbs');       
-    }
+    };
 
     //Render Library page
     function loadLibrary(ctx) {
@@ -143,8 +144,12 @@ function main () {
         });
 
         //Creat personal Library
-        
+        this.get('#/create', function (ctx) {
+            setHeaderInfo(ctx)
 
+            this.loadPartials(partials)
+                .partial('views/userLibrary/createdLibrary.hbs')  
+        });
     });
 
     app.run();
