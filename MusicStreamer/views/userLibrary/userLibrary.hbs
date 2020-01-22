@@ -1,0 +1,12 @@
+{{>header}}
+{{#if isNotEmpty}}
+    <div>
+        {{#each songs}}
+            {{> song}}
+        {{/each}}
+    </div> 
+{{else}}
+<h2>{{name}} Music Library</h2>
+<p>Your Library is still Empty</p>
+{{/if}}
+{{>footer}}

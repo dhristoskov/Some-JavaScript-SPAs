@@ -179,23 +179,15 @@ button:hover {
     color: #333;
 }
 
-.interact-buttons {
-    display: flex;
-    width: 100%;
-    padding: 1rem;
-    justify-content: space-evenly;
-}
-
-.interact-buttons li{
-    list-style: none;
-}
-
 .simple-button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
     background-color: #003E5D;
     transition: all 0.3 ease 0s;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 12px;
 }
 
 .library-options {

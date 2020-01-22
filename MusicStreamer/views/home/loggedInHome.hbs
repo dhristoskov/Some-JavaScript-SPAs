@@ -7,61 +7,51 @@
                     <img class="card-img" src="/images/girl-1990347_640.jpg" alt="song image">
                     <h3>Dance Music</h3>
                     <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
+                    {{#if isloggedIn}}
+                    <a href="#/library" class="simple-button">To Dance Music</a>
+                    {{else}}
+                    <a href="#/login" class="simple-button">Log-In or Register</a>
+                    {{/if}}
                 </div>
                 <div class="music-card">
                     <img class="card-img" src="/images/music-player-2951399_640.jpg" alt="song image">
                     <h3>Latino Music</h3>
                     <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
+                    {{#if isloggedIn}}
+                    <a href="#/library" class="simple-button">To Latino Music</a>
+                    {{else}}
+                    <a href="#/login" class="simple-button">Log-In or Register</a>
+                    {{/if}}
                 </div>
                 <div class="music-card">
                     <img class="card-img" src="/images/musical-background-2886886_640.jpg" alt="song image">
                     <h3>Retro Music</h3>
                     <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
+                    {{#if isloggedIn}}
+                    <a href="#/library" class="simple-button">To Retro Music</a>
+                    {{else}}
+                    <a href="#/login" class="simple-button">Log-In or Register</a>
+                    {{/if}}
                 </div>
                 <div class="music-card">
                     <img class="card-img" src="/images/headphones-3435885_640.jpg" alt="song image">
                     <h3>Workout Music</h3>
                     <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
+                    {{#if isloggedIn}}
+                    <a href="#/library" class="simple-button">To Workout Music</a>
+                    {{else}}
+                    <a href="#/login" class="simple-button">Log-In or Register</a>
+                    {{/if}}
                 </div>
                 <div class="music-card">
                     <img class="card-img" src="/images/music-player1-2939936_640.jpg" alt="song image">
                     <h3>Pop-Hits</h3>
                     <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
+                    {{#if isloggedIn}}
+                    <a href="#/library" class="simple-button">To Pop-Hits</a>
+                    {{else}}
+                    <a href="#/login" class="simple-button">Log-In or Register</a>
+                    {{/if}}
                 </div>
             </div>
         </div>

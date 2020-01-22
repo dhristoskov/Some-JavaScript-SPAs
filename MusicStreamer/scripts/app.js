@@ -1,6 +1,6 @@
 import { post, get, put } from './requester.js';
 import { authenticationInfo, setHeaderInfo, dataAuthentication } from './authentication.js';
-import { infoMessage, errorMessage } from './notifications.js';
+import { infoMessage } from './notifications.js';
 
 function main () {
 
@@ -14,7 +14,7 @@ function main () {
         setHeaderInfo(context);
 
         context.loadPartials(partials)   
-            .partial('/views/home/loggedInHome.hbs');       
+               .partial('/views/home/loggedInHome.hbs');       
     }
 
     //Render Library page
@@ -107,6 +107,7 @@ function main () {
                 .partial('/views/contact/contact.hbs')
         });
 
+
         //Library page loading
         this.get('#/library', loadLibrary); 
         
@@ -121,7 +122,8 @@ function main () {
                     const newSong = {
                             like: song.like + 1, 
                             name: song.name,
-                            link: song.link
+                            link: song.link,
+                            genre: song.genre
                             }
 
                     put('Kinvey', 'appdata', `songs/${id}`, newSong)
@@ -131,6 +133,18 @@ function main () {
             })
             .catch(console.error)          
         });
+
+        //Load Personal Library
+        this.get('#/userLibrary', function (ctx) {
+            setHeaderInfo(ctx)
+
+            this.loadPartials(partials)
+                .partial('views/userLibrary/userLibrary.hbs')          
+        });
+
+        //Creat personal Library
+        
+
     });
 
     app.run();
