@@ -5,117 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/formstyle.css">
+    <link rel="stylesheet" href="/style/logo.css">
+    <link rel="stylesheet" href="/style/songStyle.css">
     <!-- Dependency -->
+    <script src="https://kit.fontawesome.com/97203dddc8.js" crossorigin="anonymous"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
     <script src="/node_modules/sammy/lib/min/sammy-latest.min.js"></script>
     <script src="/node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
     <!-- ---------- -->
 
     <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/authentication.js"></script>
+    <script type="module" src="/scripts/requester.js"></script>
+    <script type="module" src="/scripts/notifications.js"></script>
     <title>Music Streamin App</title>
 </head>
 <body>
-    <header>
-        <h1 class="logo">Streamer</h1>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Registration</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-        <a class="contact" href="#"><button>Contact</button></a>
-    </header> 
-    <section>
-    <h1 class="section-name">Music Library</h1>
-        <div class="container">       
-            <div class="card-wrapper">
-                <div class="music-card">
-                    <img class="card-img" src="/images/girl-1990347_640.jpg" alt="song image">
-                    <h3>Dance Music</h3>
-                    <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
-                </div>
-                <div class="music-card">
-                    <img class="card-img" src="/images/music-player-2951399_640.jpg" alt="song image">
-                    <h3>Latino Music</h3>
-                    <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
-                </div>
-                <div class="music-card">
-                    <img class="card-img" src="/images/musical-background-2886886_640.jpg" alt="song image">
-                    <h3>Retro Music</h3>
-                    <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
-                </div>
-                <div class="music-card">
-                    <img class="card-img" src="/images/headphones-3435885_640.jpg" alt="song image">
-                    <h3>Workout Music</h3>
-                    <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
-                </div>
-                <div class="music-card">
-                    <img class="card-img" src="/images/music-player1-2939936_640.jpg" alt="song image">
-                    <h3>Pop-Hits</h3>
-                    <p>Something about the song</p>
-                    <ul class="interact-buttons">
-                        <li><button class="simple-button">To the Library</button></li>
-                    </ul>
-                    <ul class="library-options">                  
-                        <li><a href="#">Like</a></li>
-                        <li><a href="#">Add</a></li>                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="login-box">
-        <h1 class="login-text">Login here</h1>
-        <form class="login-form">
-            <p>Username</p>
-            <input type="text" name="username" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="text" name="password" placeholder="Enter Password">
-            <input type="submit" name="submit" value="login">
-            <a href="#">Don't have an Account?</a>
-        </form>
-    </section>
-    
-    <footer>
-        <ul class="social_links">
-            <li><a href="#">FaceBook</a></li>
-            <li><a href="#">LinkdIn</a></li>
-            <li><a href="#">YouTube</a></li>
-        </ul>
-    </footer> 
-    <div class="bottom-container">
-        <a class="message" href="#">Made by D.Hristoskov</a> 
-    </div>
+    <div id="main"></div> 
 </body>
 </html>

@@ -6,10 +6,29 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(125deg, rgba(2,0,36,1) 0%, rgba(190,231,144,1) 0%, rgba(0,212,255,1) 100%);
+    background-size: 400%;
+    animation: bganimation 15s infinite;
+}
+
+@keyframes bganimation {
+    0%{
+        background-position: 0% 50% ;
+    }
+    50%{
+        background-position: 100% 50% ;
+    }
+    100%{
+        background-position: 0% 50% ;
+    }
 }
 
 li, a, button {
@@ -25,16 +44,19 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 30px 10%;
-    background-color: #DC8665;
+    background-color: #00A9FF;
 }
 
 footer {
     display: flex;
     justify-content: space-around;
-    background-color: #DC8665;
+    background-color: #00A9FF;
     align-items: center;
     padding: 30px 10%;
-    margin-top: auto;
+    position: relative;
+    bottom: 0%;
+    min-width: 100%;
+    margin-top: 50px;
 }
 
 .logo {
@@ -84,11 +106,13 @@ button:hover {
 }
 
 .bottom-container {
-    background-color: sienna;
+    background-color: #008BD1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    position: relative;
+    bottom: 0%;
+    min-width: 100%;
 }
 
 .message {
@@ -96,12 +120,18 @@ button:hover {
 }
 
 .social_links li a {
-    transition: all 0.3 ease 0s;
+    display: inline-flex;
+    text-decoration: none;
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 8px;
 }
 
-.social_links li a:hover {
-    color: aquamarine;
-}
 
 .section-name{
     text-transform: uppercase;
@@ -117,6 +147,7 @@ button:hover {
     display: flex;
     align-items: center;
     align-content: center;
+    padding-bottom: 100px;
     justify-content: space-around;
 }
 
@@ -124,7 +155,7 @@ button:hover {
     width: 15rem;
     display: flex;
     flex-direction: column;
-    background-color: #DC8665;
+    background-color: #008BD1;
     align-items: center;
     justify-content: center;
     margin: 2rem 0;
@@ -158,7 +189,7 @@ button:hover {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    background-color: sienna;
+    background-color: #003E5D;
     transition: all 0.3 ease 0s;
 }
 

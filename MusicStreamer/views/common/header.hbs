@@ -1,0 +1,31 @@
+<header>
+    <div class="wave">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+        <div class="bar bar8"></div>
+    </div>
+    <h1 class="logo">SoundWave</h1>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="#">Home</a></li>
+            {{#if isloggedIn}}
+            <li><a href="#/library">{{name}} Library</a></li>
+            <li><a href="#/logout">Logout</a></li>
+            {{else}}
+            <li><a href="#/login">Login</a></li>
+            <li><a href="#/register">Registration</a></li>   
+             {{/if}}        
+         </ul>
+    </nav>
+    <a class="contact" href="#/contact"><button>Contact</button></a>
+</header> 
+
+<div class="notifications">
+    <div id ="infoBox" >{{message}}</div>
+    <div id ="errorBox" >{{message}}</div>
+</div>
