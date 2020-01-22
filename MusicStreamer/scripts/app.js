@@ -9,6 +9,7 @@ function main () {
         footer: '/views/common/footer.hbs'
     }
 
+    //Render Home page
     function loadHome (context) {
         setHeaderInfo(context);
 
@@ -16,12 +17,28 @@ function main () {
             .partial('/views/home/loggedInHome.hbs');       
     }
 
+    //Render Library page
+    function loadLibrary(ctx) {
+        setHeaderInfo(ctx)
+
+        partials['song'] = '/views/library/song.hbs'
+        partials['genre'] = '/views/library/genre.hbs'
+
+        get('Kinvey', 'appdata', 'songs')
+            .then((data) => {
+                ctx.genre = data.genre;
+                ctx.songs = data;
+                this.loadPartials(partials)
+                    .partial('/views/library/songsCatalog.hbs')
+            });
+    };
+
     const app = new Sammy('#main', function () {
         this.use('Handlebars', 'hbs');
         
         //Home page loading
-
-        this.get('/' , loadHome)
+        this.get('/' , loadHome);
+        this.get('#/home', loadHome)
         
         //Login page loading
         this.get('#/login', function () {
@@ -91,38 +108,27 @@ function main () {
         });
 
         //Library page loading
-        this.get('#/library', function (ctx) {
-            setHeaderInfo(ctx)
-
-            partials['song'] = '/views/library/song.hbs'
-            partials['genre'] = '/views/library/genre.hbs'
-
-            get('Kinvey', 'appdata', 'songs')
-                .then((data) => {
-                    ctx.genre = data.genre;
-                    ctx.songs = data;
-                    this.loadPartials(partials)
-                        .partial('/views/library/songsCatalog.hbs')
-                })        
-        }); 
+        this.get('#/library', loadLibrary); 
         
         //Add a song into user library
-        // this.get('#/add/:id', function (ctx) {
+        this.post('#/add/:id', function (ctx) {
 
-        //     const userData = {
-        //         username: sessionStorage.getItem('username'),
-        //         songId: this.params.id
-        //     }
+            const id = ctx.params.id;  
+            let newSong = '';
 
-        //     put('Kinvey', 'user', sessionStorage.getItem(ctx._id), userData)
-        //         .then((data) => {
-        //             authenticationInfo(data);
-        //             infoMessage('THIS SONG WAS ADDED!');
-        //             loadHome(ctx);
-        //         })
-        //         .catch(console.error)
-            
-        // })
+            get('Kinvey', 'appdata', `songs/${id}`)
+                .then((song) => {
+                    newSong = song.like + 1;
+                    console.log(newSong);
+                })
+                .catch(console.error)
+             
+            put('Kinvey', 'appdata', `songs/${id}`, newSong)
+                .then((newSong) => {
+                    console.log(newSong.like);
+                })  
+                .catch(console.error)        
+        });
     });
 
     app.run();

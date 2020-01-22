@@ -69,3 +69,8 @@ export function put (authType, urlModule, endPoint, userData) {
 
     return makeRequest(urlModule, endPoint, header);
 }
+
+//DELETE request
+export function del (authType, urlModule, endPoint, userData) {
+    
+}
