@@ -29,6 +29,14 @@ h2{
     font-size: 30px;
 }
 
+.like-button {
+    float: right;
+    margin-right: -45px;
+    padding: 10px;
+    font-size: 15px;
+    color: black;
+}
+
 audio {
     float: right;
     margin-left: 5px;

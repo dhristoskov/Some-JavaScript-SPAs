@@ -28,7 +28,7 @@ function main () {
             .then((data) => {
                 ctx.genre = data.genre;
                 ctx.songs = data;
-                this.loadPartials(partials)
+                ctx.loadPartials(partials)
                     .partial('/views/library/songsCatalog.hbs')
             });
     };
@@ -111,23 +111,25 @@ function main () {
         this.get('#/library', loadLibrary); 
         
         //Add a song into user library
-        this.post('#/add/:id', function (ctx) {
+        this.get('#/like/:id', function (ctx) {
 
-            const id = ctx.params.id;  
-            let newSong = '';
+            const id = ctx.params.id; 
 
             get('Kinvey', 'appdata', `songs/${id}`)
                 .then((song) => {
-                    newSong = song.like + 1;
-                    console.log(newSong);
-                })
-                .catch(console.error)
-             
-            put('Kinvey', 'appdata', `songs/${id}`, newSong)
-                .then((newSong) => {
-                    console.log(newSong.like);
-                })  
-                .catch(console.error)        
+    
+                    const newSong = {
+                            like: song.like + 1, 
+                            name: song.name,
+                            link: song.link
+                            }
+
+                    put('Kinvey', 'appdata', `songs/${id}`, newSong)
+                    .then(() => {
+                        loadLibrary(ctx)    
+                    });          
+            })
+            .catch(console.error)          
         });
     });
 
