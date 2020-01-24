@@ -1,7 +1,9 @@
 //Server data
-const baseUrl = 'https://baas.kinvey.com';
-const appKey = 'kid_H1yVGgk-U';
-const appSecret = 'af33812074cf433ba0cd0ae5060b000f';
+
+
+const baseUrl = '';   // Have to be added 
+const appKey = '';  // Have to be added
+const appSecret = '';   // Have to be added
 
 //Setting Header Type (Basic or Kinvey)
 function authentication (type) {
